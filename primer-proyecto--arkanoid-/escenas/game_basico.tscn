@@ -1,0 +1,134 @@
+[gd_scene format=3 uid="uid://fi480c4p4sg2"]
+
+[ext_resource type="PackedScene" uid="uid://n1syph645jwb" path="res://escenas/barraInferior.tscn" id="1_vaun7"]
+[ext_resource type="PackedScene" uid="uid://cvhxktr6he8yr" path="res://escenas/ball.tscn" id="2_vaun7"]
+[ext_resource type="PackedScene" uid="uid://bbrywashgdsaw" path="res://escenas/bloques.tscn" id="3_djqux"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vaun7"]
+size = Vector2(4, 648)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_mh86s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_djqux"]
+size = Vector2(3.9994555, 1152.0022)
+
+[node name="GameBasico" type="Node2D" unique_id=1668226676]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=835606476]
+position = Vector2(2, 324)
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=674137433]
+shape = SubResource("RectangleShape2D_vaun7")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=387329152]
+position = Vector2(0, 2.3841858e-07)
+scale = Vector2(-5.0000005, 648.09814)
+texture = SubResource("CanvasTexture_mh86s")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=224096685]
+position = Vector2(1150, 324)
+collision_mask = 6
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2" unique_id=1258256310]
+position = Vector2(0, 2.3841858e-07)
+scale = Vector2(-5.0000005, 648.09814)
+texture = SubResource("CanvasTexture_mh86s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1658015860]
+shape = SubResource("RectangleShape2D_vaun7")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=867096940]
+position = Vector2(626, 5)
+rotation = 1.5710688
+collision_mask = 6
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3" unique_id=1545699586]
+position = Vector2(-2.986923, 48.00084)
+scale = Vector2(-5.0000005, 1155.5632)
+texture = SubResource("CanvasTexture_mh86s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1446639587]
+position = Vector2(-3.0002718, 50.001038)
+shape = SubResource("RectangleShape2D_djqux")
+
+[node name="barra" parent="." unique_id=1065273452 instance=ExtResource("1_vaun7")]
+position = Vector2(524, 633)
+
+[node name="ball" parent="." unique_id=2024361078 instance=ExtResource("2_vaun7")]
+position = Vector2(526, 507)
+
+[node name="bloques" parent="." unique_id=793176866 instance=ExtResource("3_djqux")]
+position = Vector2(565, 126)
+
+[node name="bloques2" parent="." unique_id=1521979385 instance=ExtResource("3_djqux")]
+position = Vector2(216, 126)
+
+[node name="bloques3" parent="." unique_id=225656020 instance=ExtResource("3_djqux")]
+position = Vector2(399, 126)
+
+[node name="bloques4" parent="." unique_id=1653995620 instance=ExtResource("3_djqux")]
+position = Vector2(750, 126)
+
+[node name="bloques5" parent="." unique_id=1420313448 instance=ExtResource("3_djqux")]
+position = Vector2(935, 126)
+
+[node name="bloques6" parent="." unique_id=1542225367 instance=ExtResource("3_djqux")]
+position = Vector2(565, 177)
+
+[node name="bloques7" parent="." unique_id=850778700 instance=ExtResource("3_djqux")]
+position = Vector2(216, 177)
+
+[node name="bloques8" parent="." unique_id=1716002736 instance=ExtResource("3_djqux")]
+position = Vector2(399, 177)
+
+[node name="bloques9" parent="." unique_id=806338018 instance=ExtResource("3_djqux")]
+position = Vector2(750, 177)
+
+[node name="bloques11" parent="." unique_id=624355779 instance=ExtResource("3_djqux")]
+position = Vector2(565, 233)
+
+[node name="bloques12" parent="." unique_id=2144625087 instance=ExtResource("3_djqux")]
+position = Vector2(216, 233)
+
+[node name="bloques13" parent="." unique_id=1125235964 instance=ExtResource("3_djqux")]
+position = Vector2(399, 233)
+
+[node name="bloques14" parent="." unique_id=1819212604 instance=ExtResource("3_djqux")]
+position = Vector2(750, 233)
+
+[node name="bloques15" parent="." unique_id=1970416264 instance=ExtResource("3_djqux")]
+position = Vector2(935, 233)
+
+[node name="bloques10" parent="." unique_id=2032743608 instance=ExtResource("3_djqux")]
+position = Vector2(935, 177)
+
+[node name="bloques16" parent="." unique_id=1433077418 instance=ExtResource("3_djqux")]
+position = Vector2(565, 286)
+
+[node name="bloques17" parent="." unique_id=1964281345 instance=ExtResource("3_djqux")]
+position = Vector2(216, 286)
+
+[node name="bloques18" parent="." unique_id=1336253828 instance=ExtResource("3_djqux")]
+position = Vector2(399, 286)
+
+[node name="bloques19" parent="." unique_id=1917713546 instance=ExtResource("3_djqux")]
+position = Vector2(750, 286)
+
+[node name="bloques20" parent="." unique_id=39037700 instance=ExtResource("3_djqux")]
+position = Vector2(565, 342)
+
+[node name="bloques21" parent="." unique_id=2040362577 instance=ExtResource("3_djqux")]
+position = Vector2(216, 342)
+
+[node name="bloques22" parent="." unique_id=86981117 instance=ExtResource("3_djqux")]
+position = Vector2(399, 342)
+
+[node name="bloques23" parent="." unique_id=661194829 instance=ExtResource("3_djqux")]
+position = Vector2(750, 342)
+
+[node name="bloques24" parent="." unique_id=409329891 instance=ExtResource("3_djqux")]
+position = Vector2(935, 342)
+
+[node name="bloques25" parent="." unique_id=352596702 instance=ExtResource("3_djqux")]
+position = Vector2(935, 286)

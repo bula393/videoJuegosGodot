@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cvhxktr6he8yr"]
+
+[ext_resource type="Texture2D" uid="uid://bq58ba1hr3jsd" path="res://assets/white-plastic-ball-png.png" id="1_aup1f"]
+[ext_resource type="Script" uid="uid://qmrol6oqiplf" path="res://escenas/ball.gd" id="1_fqem1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aup1f"]
+radius = 22.090721
+
+[node name="ball" type="CharacterBody2D" unique_id=2024361078]
+position = Vector2(511, 213)
+collision_layer = 4
+collision_mask = 11
+script = ExtResource("1_fqem1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1472298544]
+position = Vector2(1.9999802, -3.0000038)
+scale = Vector2(0.19428568, 0.19428568)
+texture = ExtResource("1_aup1f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1284402479]
+position = Vector2(-1, -1)
+shape = SubResource("CircleShape2D_aup1f")

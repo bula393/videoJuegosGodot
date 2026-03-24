@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://n1syph645jwb"]
+
+[ext_resource type="Script" uid="uid://2nk1n1unuimd" path="res://escenas/barra_inferior.gd" id="1_bm6ih"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_oierr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oierr"]
+size = Vector2(196.01434, 26)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1065273452]
+position = Vector2(321, 633)
+rotation = 3.139747
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_bm6ih")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1081165704]
+position = Vector2(0.022335052, -1.13248825e-05)
+scale = Vector2(196.43115, 25.999949)
+texture = SubResource("CanvasTexture_oierr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=627143823]
+position = Vector2(1.9944458, -0.00018310547)
+scale = Vector2(1.0000004, 1.0000004)
+shape = SubResource("RectangleShape2D_oierr")

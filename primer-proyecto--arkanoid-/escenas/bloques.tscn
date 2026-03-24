@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bbrywashgdsaw"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_5sf46"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b2150"]
+size = Vector2(177, 48)
+
+[node name="bloques" type="StaticBody2D" unique_id=1521979385]
+position = Vector2(311, 196)
+collision_layer = 8
+collision_mask = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1455560580]
+position = Vector2(7.6293945e-06, 5.722046e-06)
+scale = Vector2(177.5, 47.50001)
+texture = SubResource("CanvasTexture_5sf46")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1110206962]
+position = Vector2(2.5, -1)
+shape = SubResource("RectangleShape2D_b2150")
