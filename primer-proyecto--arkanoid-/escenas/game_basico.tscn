@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://fi480c4p4sg2"]
 
+[ext_resource type="Script" uid="uid://b8avfuxaq1nxj" path="res://escenas/game_basico.gd" id="1_15310"]
 [ext_resource type="PackedScene" uid="uid://n1syph645jwb" path="res://escenas/barraInferior.tscn" id="1_vaun7"]
+[ext_resource type="Texture2D" uid="uid://csdlmjdtw0kt" path="res://assets/fondo.jpg" id="1_wvqmg"]
 [ext_resource type="PackedScene" uid="uid://cvhxktr6he8yr" path="res://escenas/ball.tscn" id="2_vaun7"]
 [ext_resource type="PackedScene" uid="uid://bbrywashgdsaw" path="res://escenas/bloques.tscn" id="3_djqux"]
+[ext_resource type="Script" uid="uid://solsi0o0nqi6" path="res://escenas/derrota.gd" id="6_ipmjs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vaun7"]
 size = Vector2(4, 648)
@@ -13,6 +16,14 @@ size = Vector2(4, 648)
 size = Vector2(3.9994555, 1152.0022)
 
 [node name="GameBasico" type="Node2D" unique_id=1668226676]
+script = ExtResource("1_15310")
+
+[node name="Fondo" type="Sprite2D" parent="." unique_id=663089180]
+position = Vector2(571, 317.25003)
+scale = Vector2(4.288889, 4.046584)
+texture = ExtResource("1_wvqmg")
+region_enabled = true
+region_rect = Rect2(0, 0, 270, 161.7858)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=835606476]
 position = Vector2(2, 324)
@@ -22,6 +33,7 @@ collision_mask = 6
 shape = SubResource("RectangleShape2D_vaun7")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=387329152]
+visible = false
 position = Vector2(0, 2.3841858e-07)
 scale = Vector2(-5.0000005, 648.09814)
 texture = SubResource("CanvasTexture_mh86s")
@@ -31,6 +43,7 @@ position = Vector2(1150, 324)
 collision_mask = 6
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2" unique_id=1258256310]
+visible = false
 position = Vector2(0, 2.3841858e-07)
 scale = Vector2(-5.0000005, 648.09814)
 texture = SubResource("CanvasTexture_mh86s")
@@ -44,6 +57,7 @@ rotation = 1.5710688
 collision_mask = 6
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3" unique_id=1545699586]
+visible = false
 position = Vector2(-2.986923, 48.00084)
 scale = Vector2(-5.0000005, 1155.5632)
 texture = SubResource("CanvasTexture_mh86s")
@@ -132,3 +146,63 @@ position = Vector2(935, 342)
 
 [node name="bloques25" parent="." unique_id=352596702 instance=ExtResource("3_djqux")]
 position = Vector2(935, 286)
+
+[node name="derrota" type="Control" parent="." unique_id=747024246]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 344.0
+offset_top = 201.0
+offset_right = 826.0
+offset_bottom = 432.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+script = ExtResource("6_ipmjs")
+
+[node name="ColorRect" type="ColorRect" parent="derrota" unique_id=1887010566]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.22670749, 0.22670749, 0.22670746, 1)
+
+[node name="play again" type="Button" parent="derrota" unique_id=431746184]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 165.0
+offset_right = 358.0
+offset_bottom = 200.0
+
+[node name="TextEdit" type="TextEdit" parent="derrota/play again" unique_id=99831596]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.5
+offset_top = -17.5
+offset_right = 49.5
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/search_result_color = Color(0.3019608, 0.3019608, 0.3019608, 0)
+theme_override_colors/search_result_border_color = Color(0.3019608, 0.3019608, 0.3019608, 0)
+theme_override_colors/caret_background_color = Color(0, 0, 0, 0)
+theme_override_colors/selection_color = Color(0.5019608, 0.5019608, 0.5019608, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_colors/current_line_color = Color(0.2509804, 0.2509804, 0.25882354, 0)
+text = "PLAY AGAIN"
+
+[node name="TextEdit" type="TextEdit" parent="derrota" unique_id=1899803693]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 31.0
+offset_right = 395.0
+offset_bottom = 129.0
+theme_override_font_sizes/font_size = 53
+text = "GAME OVER"
+
+[connection signal="pressed" from="derrota/play again" to="." method="_on_play_again_pressed"]

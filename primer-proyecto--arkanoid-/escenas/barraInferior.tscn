@@ -1,11 +1,7 @@
 [gd_scene format=3 uid="uid://n1syph645jwb"]
 
 [ext_resource type="Script" uid="uid://2nk1n1unuimd" path="res://escenas/barra_inferior.gd" id="1_bm6ih"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_oierr"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oierr"]
-size = Vector2(196.01434, 26)
+[ext_resource type="Texture2D" uid="uid://tmpvprm4420s" path="res://assets/assets completos.png" id="2_s8qf4"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1065273452]
 position = Vector2(321, 633)
@@ -15,11 +11,13 @@ collision_mask = 5
 script = ExtResource("1_bm6ih")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1081165704]
-position = Vector2(0.022335052, -1.13248825e-05)
-scale = Vector2(196.43115, 25.999949)
-texture = SubResource("CanvasTexture_oierr")
+position = Vector2(10.999987, 0.020287752)
+scale = Vector2(1.7864639, 0.9910986)
+texture = ExtResource("2_s8qf4")
+region_enabled = true
+region_rect = Rect2(148.54218, 331.94498, 127.17102, 29.913055)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=627143823]
-position = Vector2(1.9944458, -0.00018310547)
-scale = Vector2(1.0000004, 1.0000004)
-shape = SubResource("RectangleShape2D_oierr")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1197385600]
+position = Vector2(10.9999695, 0.020263672)
+scale = Vector2(1.0000007, 1.0000007)
+polygon = PackedVector2Array(100.97206, 15.186462, -100.027466, 14.81543, -107.025604, 13.802551, -108.01083, 5.800659, -113.00531, 2.7914429, -112.99423, -3.2085571, -108.99423, -3.2011719, -107.9776, -12.19928, -101.97211, -15.188171, 102.02928, -15.8116455, 108.02373, -12.800598, 107.00711, -3.8024902, 113.00525, -2.7913818, 112.99419, 3.2086182, 106.99051, 5.19751, 107.977585, 12.199341)
