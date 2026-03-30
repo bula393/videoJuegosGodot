@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://n1syph645jwb"]
 
-[ext_resource type="Script" uid="uid://2nk1n1unuimd" path="res://escenas/barra_inferior.gd" id="1_bm6ih"]
+[ext_resource type="Script" uid="uid://2nk1n1unuimd" path="res://scrips/barra_inferior.gd" id="1_bm6ih"]
 [ext_resource type="Texture2D" uid="uid://tmpvprm4420s" path="res://assets/assets completos.png" id="2_s8qf4"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1065273452]

@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://cvhxktr6he8yr"]
 
 [ext_resource type="Texture2D" uid="uid://bq58ba1hr3jsd" path="res://assets/white-plastic-ball-png.png" id="1_aup1f"]
-[ext_resource type="Script" uid="uid://qmrol6oqiplf" path="res://escenas/ball.gd" id="1_fqem1"]
+[ext_resource type="Script" uid="uid://qmrol6oqiplf" path="res://scrips/ball.gd" id="1_fqem1"]
+[ext_resource type="AudioStream" uid="uid://dy2hm54vj6cym" path="res://assets/musicAndEffects/freesound_community-boing-2-44164.mp3" id="3_gv8hv"]
+[ext_resource type="AudioStream" uid="uid://cqxtx5yir007x" path="res://assets/musicAndEffects/dragon-studio-car-crash-sound-376882.mp3" id="4_pqmp4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aup1f"]
 radius = 22.090721
@@ -20,3 +22,9 @@ texture = ExtResource("1_aup1f")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1284402479]
 position = Vector2(-1, -1)
 shape = SubResource("CircleShape2D_aup1f")
+
+[node name="audiorebote" type="AudioStreamPlayer2D" parent="." unique_id=1763413656]
+stream = ExtResource("3_gv8hv")
+
+[node name="choque" type="AudioStreamPlayer2D" parent="." unique_id=349400181]
+stream = ExtResource("4_pqmp4")

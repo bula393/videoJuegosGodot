@@ -1,11 +1,21 @@
 [gd_scene format=3 uid="uid://fi480c4p4sg2"]
 
-[ext_resource type="Script" uid="uid://b8avfuxaq1nxj" path="res://escenas/game_basico.gd" id="1_15310"]
+[ext_resource type="Script" uid="uid://b8avfuxaq1nxj" path="res://scrips/game_basico.gd" id="1_15310"]
 [ext_resource type="PackedScene" uid="uid://n1syph645jwb" path="res://escenas/barraInferior.tscn" id="1_vaun7"]
 [ext_resource type="Texture2D" uid="uid://csdlmjdtw0kt" path="res://assets/fondo.jpg" id="1_wvqmg"]
 [ext_resource type="PackedScene" uid="uid://cvhxktr6he8yr" path="res://escenas/ball.tscn" id="2_vaun7"]
 [ext_resource type="PackedScene" uid="uid://bbrywashgdsaw" path="res://escenas/bloques.tscn" id="3_djqux"]
-[ext_resource type="Script" uid="uid://solsi0o0nqi6" path="res://escenas/derrota.gd" id="6_ipmjs"]
+[ext_resource type="AudioStream" uid="uid://dew7bujfgugor" path="res://assets/musicAndEffects/vjgalaxy-video-game-liquid-drum-and-bass-3642.mp3" id="5_3y1x5"]
+[ext_resource type="Texture2D" uid="uid://dihe4443mf8s2" path="res://assets/gameOver.jpg" id="8_qw14g"]
+[ext_resource type="AudioStream" uid="uid://cfe8vaopvop36" path="res://assets/musicAndEffects/dragon-studio-game-over-retro-8bit-sfx-499656.mp3" id="8_tj3ik"]
+[ext_resource type="Texture2D" uid="uid://ddf785v05ud2x" path="res://assets/buttons/music_on.png" id="9_yskmh"]
+[ext_resource type="Texture2D" uid="uid://bmp8r8nrudht" path="res://assets/buttons/music_off.png" id="10_o8pf5"]
+[ext_resource type="Texture2D" uid="uid://dnfcxh53fon0l" path="res://assets/youWin.png" id="10_s2n0o"]
+[ext_resource type="Texture2D" uid="uid://clxsgm5soxnjo" path="res://assets/buttons/sound_on.png" id="11_0jyd2"]
+[ext_resource type="Texture2D" uid="uid://dhrayeamtyqxa" path="res://assets/buttons/sound_off.png" id="11_o8pf5"]
+[ext_resource type="AudioStream" uid="uid://7un0w7ijornw" path="res://assets/musicAndEffects/superpuyofans1234-winner-game-sound-404167.mp3" id="11_u3de1"]
+[ext_resource type="Texture2D" uid="uid://caqfayq3josg5" path="res://assets/buttons/play_hover.png" id="12_xcirb"]
+[ext_resource type="Texture2D" uid="uid://co0acxlxy8cwb" path="res://assets/buttons/pause.png" id="15_oggcq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vaun7"]
 size = Vector2(4, 648)
@@ -14,6 +24,25 @@ size = Vector2(4, 648)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_djqux"]
 size = Vector2(3.9994555, 1152.0022)
+
+[sub_resource type="GDScript" id="GDScript_oy8lx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oy8lx"]
+bg_color = Color(0, 0.32941177, 0.50980395, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0b8h1"]
+atlas = ExtResource("1_wvqmg")
+region = Rect2(0, 0, 270, 163.10065)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hvjtw"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3dkeb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="GameBasico" type="Node2D" unique_id=1668226676]
 script = ExtResource("1_15310")
@@ -72,82 +101,87 @@ position = Vector2(524, 633)
 [node name="ball" parent="." unique_id=2024361078 instance=ExtResource("2_vaun7")]
 position = Vector2(526, 507)
 
-[node name="bloques" parent="." unique_id=793176866 instance=ExtResource("3_djqux")]
-position = Vector2(565, 126)
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1055074697]
+stream = ExtResource("5_3y1x5")
+autoplay = true
 
-[node name="bloques2" parent="." unique_id=1521979385 instance=ExtResource("3_djqux")]
-position = Vector2(216, 126)
+[node name="bloques" parent="." unique_id=793176866 groups=["BLOQUES"] instance=ExtResource("3_djqux")]
+position = Vector2(577, 127)
 
-[node name="bloques3" parent="." unique_id=225656020 instance=ExtResource("3_djqux")]
-position = Vector2(399, 126)
+[node name="bloques2" parent="." unique_id=1521979385 groups=["BLOQUES"] instance=ExtResource("3_djqux")]
+position = Vector2(211, 127)
 
-[node name="bloques4" parent="." unique_id=1653995620 instance=ExtResource("3_djqux")]
-position = Vector2(750, 126)
+[node name="bloques3" parent="." unique_id=225656020 groups=["BLOQUES"] instance=ExtResource("3_djqux")]
+position = Vector2(394, 127)
 
-[node name="bloques5" parent="." unique_id=1420313448 instance=ExtResource("3_djqux")]
-position = Vector2(935, 126)
+[node name="bloques4" parent="." unique_id=1653995620 groups=["BLOQUES"] instance=ExtResource("3_djqux")]
+position = Vector2(760, 127)
 
-[node name="bloques6" parent="." unique_id=1542225367 instance=ExtResource("3_djqux")]
-position = Vector2(565, 177)
+[node name="bloques5" parent="." unique_id=1420313448 groups=["BLOQUES"] instance=ExtResource("3_djqux")]
+position = Vector2(943, 127)
 
-[node name="bloques7" parent="." unique_id=850778700 instance=ExtResource("3_djqux")]
-position = Vector2(216, 177)
+[node name="bloques6" parent="." unique_id=1542225367 groups=["BLOQUES"] instance=ExtResource("3_djqux")]
+position = Vector2(577, 178)
 
-[node name="bloques8" parent="." unique_id=1716002736 instance=ExtResource("3_djqux")]
-position = Vector2(399, 177)
+[node name="bloques7" parent="." unique_id=850778700 groups=["BLOQUES"] instance=ExtResource("3_djqux")]
+position = Vector2(211, 178)
 
-[node name="bloques9" parent="." unique_id=806338018 instance=ExtResource("3_djqux")]
-position = Vector2(750, 177)
+[node name="bloques8" parent="." unique_id=1716002736 groups=["BLOQUES"] instance=ExtResource("3_djqux")]
+position = Vector2(394, 178)
 
-[node name="bloques11" parent="." unique_id=624355779 instance=ExtResource("3_djqux")]
-position = Vector2(565, 233)
+[node name="bloques9" parent="." unique_id=806338018 groups=["BLOQUES"] instance=ExtResource("3_djqux")]
+position = Vector2(760, 178)
 
-[node name="bloques12" parent="." unique_id=2144625087 instance=ExtResource("3_djqux")]
-position = Vector2(216, 233)
+[node name="bloques11" parent="." unique_id=624355779 groups=["BLOQUES"] instance=ExtResource("3_djqux")]
+position = Vector2(577, 234)
 
-[node name="bloques13" parent="." unique_id=1125235964 instance=ExtResource("3_djqux")]
-position = Vector2(399, 233)
+[node name="bloques12" parent="." unique_id=2144625087 groups=["BLOQUES"] instance=ExtResource("3_djqux")]
+position = Vector2(211, 234)
 
-[node name="bloques14" parent="." unique_id=1819212604 instance=ExtResource("3_djqux")]
-position = Vector2(750, 233)
+[node name="bloques13" parent="." unique_id=1125235964 groups=["BLOQUES"] instance=ExtResource("3_djqux")]
+position = Vector2(394, 234)
 
-[node name="bloques15" parent="." unique_id=1970416264 instance=ExtResource("3_djqux")]
-position = Vector2(935, 233)
+[node name="bloques14" parent="." unique_id=1819212604 groups=["BLOQUES"] instance=ExtResource("3_djqux")]
+position = Vector2(760, 234)
 
-[node name="bloques10" parent="." unique_id=2032743608 instance=ExtResource("3_djqux")]
-position = Vector2(935, 177)
+[node name="bloques15" parent="." unique_id=1970416264 groups=["BLOQUES"] instance=ExtResource("3_djqux")]
+position = Vector2(943, 234)
 
-[node name="bloques16" parent="." unique_id=1433077418 instance=ExtResource("3_djqux")]
-position = Vector2(565, 286)
+[node name="bloques10" parent="." unique_id=2032743608 groups=["BLOQUES"] instance=ExtResource("3_djqux")]
+position = Vector2(943, 178)
 
-[node name="bloques17" parent="." unique_id=1964281345 instance=ExtResource("3_djqux")]
-position = Vector2(216, 286)
+[node name="bloques16" parent="." unique_id=1433077418 groups=["BLOQUES"] instance=ExtResource("3_djqux")]
+position = Vector2(577, 287)
 
-[node name="bloques18" parent="." unique_id=1336253828 instance=ExtResource("3_djqux")]
-position = Vector2(399, 286)
+[node name="bloques17" parent="." unique_id=1964281345 groups=["BLOQUES"] instance=ExtResource("3_djqux")]
+position = Vector2(211, 287)
 
-[node name="bloques19" parent="." unique_id=1917713546 instance=ExtResource("3_djqux")]
-position = Vector2(750, 286)
+[node name="bloques18" parent="." unique_id=1336253828 groups=["BLOQUES"] instance=ExtResource("3_djqux")]
+position = Vector2(394, 287)
 
-[node name="bloques20" parent="." unique_id=39037700 instance=ExtResource("3_djqux")]
-position = Vector2(565, 342)
+[node name="bloques19" parent="." unique_id=1917713546 groups=["BLOQUES"] instance=ExtResource("3_djqux")]
+position = Vector2(760, 287)
 
-[node name="bloques21" parent="." unique_id=2040362577 instance=ExtResource("3_djqux")]
-position = Vector2(216, 342)
+[node name="bloques20" parent="." unique_id=39037700 groups=["BLOQUES"] instance=ExtResource("3_djqux")]
+position = Vector2(577, 343)
 
-[node name="bloques22" parent="." unique_id=86981117 instance=ExtResource("3_djqux")]
-position = Vector2(399, 342)
+[node name="bloques21" parent="." unique_id=2040362577 groups=["BLOQUES"] instance=ExtResource("3_djqux")]
+position = Vector2(211, 343)
 
-[node name="bloques23" parent="." unique_id=661194829 instance=ExtResource("3_djqux")]
-position = Vector2(750, 342)
+[node name="bloques22" parent="." unique_id=86981117 groups=["BLOQUES"] instance=ExtResource("3_djqux")]
+position = Vector2(394, 343)
 
-[node name="bloques24" parent="." unique_id=409329891 instance=ExtResource("3_djqux")]
-position = Vector2(935, 342)
+[node name="bloques23" parent="." unique_id=661194829 groups=["BLOQUES"] instance=ExtResource("3_djqux")]
+position = Vector2(760, 343)
 
-[node name="bloques25" parent="." unique_id=352596702 instance=ExtResource("3_djqux")]
-position = Vector2(935, 286)
+[node name="bloques24" parent="." unique_id=409329891 groups=["BLOQUES"] instance=ExtResource("3_djqux")]
+position = Vector2(943, 343)
+
+[node name="bloques25" parent="." unique_id=352596702 groups=["BLOQUES"] instance=ExtResource("3_djqux")]
+position = Vector2(943, 287)
 
 [node name="derrota" type="Control" parent="." unique_id=747024246]
+process_mode = 3
 visible = false
 layout_mode = 3
 anchors_preset = 0
@@ -155,54 +189,286 @@ offset_left = 344.0
 offset_top = 201.0
 offset_right = 826.0
 offset_bottom = 432.0
-size_flags_horizontal = 3
+size_flags_horizontal = 6
 size_flags_vertical = 4
-script = ExtResource("6_ipmjs")
+script = SubResource("GDScript_oy8lx")
 
-[node name="ColorRect" type="ColorRect" parent="derrota" unique_id=1887010566]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.22670749, 0.22670749, 0.22670746, 1)
-
-[node name="play again" type="Button" parent="derrota" unique_id=431746184]
-layout_mode = 0
-offset_left = 109.0
-offset_top = 165.0
-offset_right = 358.0
-offset_bottom = 200.0
-
-[node name="TextEdit" type="TextEdit" parent="derrota/play again" unique_id=99831596]
+[node name="texture" type="TextureRect" parent="derrota" unique_id=933941208]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -52.5
-offset_top = -17.5
-offset_right = 49.5
-offset_bottom = 17.5
+offset_left = -133.5
+offset_top = -94.5
+offset_right = 133.5
+offset_bottom = 94.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/search_result_color = Color(0.3019608, 0.3019608, 0.3019608, 0)
-theme_override_colors/search_result_border_color = Color(0.3019608, 0.3019608, 0.3019608, 0)
-theme_override_colors/caret_background_color = Color(0, 0, 0, 0)
-theme_override_colors/selection_color = Color(0.5019608, 0.5019608, 0.5019608, 0)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
-theme_override_colors/current_line_color = Color(0.2509804, 0.2509804, 0.25882354, 0)
+texture = ExtResource("8_qw14g")
+
+[node name="ReferenceRect" type="ReferenceRect" parent="derrota" unique_id=941933162]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -133.0
+offset_top = -94.5
+offset_right = 134.0
+offset_bottom = 71.5
+grow_horizontal = 2
+grow_vertical = 2
+border_color = Color(1, 1, 1, 1)
+border_width = 3.0
+
+[node name="play again" type="Button" parent="derrota" unique_id=431746184]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = -79.0
+offset_right = 70.42859
+offset_bottom = -57.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_oy8lx")
 text = "PLAY AGAIN"
 
-[node name="TextEdit" type="TextEdit" parent="derrota" unique_id=1899803693]
-layout_mode = 0
-offset_left = 78.0
-offset_top = 31.0
-offset_right = 395.0
-offset_bottom = 129.0
-theme_override_font_sizes/font_size = 53
-text = "GAME OVER"
+[node name="gameover" type="AudioStreamPlayer2D" parent="derrota" unique_id=1891189707]
+position = Vector2(-344, -201)
+stream = ExtResource("8_tj3ik")
+
+[node name="pausa" type="Control" parent="." unique_id=1782162338]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 308.0
+offset_top = 201.0
+offset_right = 790.0
+offset_bottom = 432.0
+size_flags_horizontal = 6
+size_flags_vertical = 4
+script = SubResource("GDScript_oy8lx")
+
+[node name="texture" type="TextureRect" parent="pausa" unique_id=1900119192]
+layout_mode = 1
+offset_left = 91.0
+offset_top = 8.0
+offset_right = 393.0
+offset_bottom = 224.0
+texture = SubResource("AtlasTexture_0b8h1")
+
+[node name="ReferenceRect" type="ReferenceRect" parent="pausa" unique_id=187406864]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = -108.0
+offset_right = 152.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+border_color = Color(1, 1, 1, 1)
+border_width = 3.0
+
+[node name="menu" type="Button" parent="pausa" unique_id=304845349]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -79.5
+offset_top = -71.0
+offset_right = 79.5
+offset_bottom = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_oy8lx")
+text = " MENU"
+
+[node name="music" type="Button" parent="pausa" unique_id=1730792810]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 51.0
+offset_top = -72.5
+offset_right = 115.0
+offset_bottom = -8.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_hvjtw")
+icon = ExtResource("9_yskmh")
+
+[node name="musicoff" type="Button" parent="pausa" unique_id=874512731]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 51.0
+offset_top = -74.0
+offset_right = 115.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_hvjtw")
+icon = ExtResource("10_o8pf5")
+
+[node name="soundoff" type="Button" parent="pausa" unique_id=1984239438]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -116.0
+offset_top = -73.0
+offset_right = -52.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_hvjtw")
+icon = ExtResource("11_o8pf5")
+
+[node name="sound" type="Button" parent="pausa" unique_id=904261782]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -116.0
+offset_top = -71.5
+offset_right = -52.0
+offset_bottom = -7.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_hvjtw")
+icon = ExtResource("11_0jyd2")
+
+[node name="resume" type="Button" parent="pausa" unique_id=199085526]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -53.0
+offset_right = 36.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_hvjtw")
+icon = ExtResource("12_xcirb")
+
+[node name="victoria" type="Control" parent="." unique_id=1904847297]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 344.0
+offset_top = 201.0
+offset_right = 826.0
+offset_bottom = 432.0
+size_flags_horizontal = 6
+size_flags_vertical = 4
+script = SubResource("GDScript_oy8lx")
+
+[node name="texture" type="TextureRect" parent="victoria" unique_id=188939278]
+layout_mode = 1
+offset_left = 91.0
+offset_top = 9.0
+offset_right = 1312.0
+offset_bottom = 873.0
+texture = ExtResource("10_s2n0o")
+
+[node name="ReferenceRect" type="ReferenceRect" parent="victoria" unique_id=145573432]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = -108.0
+offset_right = 152.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+border_color = Color(1, 1, 1, 1)
+border_width = 3.0
+
+[node name="menu" type="Button" parent="victoria" unique_id=2338670]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -131.0
+offset_top = -73.0
+offset_right = -15.571411
+offset_bottom = -51.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_oy8lx")
+text = " MENU"
+
+[node name="nextLevel" type="Button" parent="victoria" unique_id=2000454648]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -74.0
+offset_right = 120.42859
+offset_bottom = -52.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_oy8lx")
+text = "NEXT LEVEL"
+
+[node name="victory" type="AudioStreamPlayer2D" parent="victoria" unique_id=1302233026]
+position = Vector2(-344, -201)
+stream = ExtResource("11_u3de1")
+
+[node name="pause" type="Button" parent="." unique_id=1845286949]
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 96.0
+offset_bottom = 96.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_3dkeb")
+icon = ExtResource("15_oggcq")
 
 [connection signal="pressed" from="derrota/play again" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="pausa/music" to="." method="_on_music_pressed"]
+[connection signal="pressed" from="pausa/musicoff" to="." method="_on_musicoff_pressed"]
+[connection signal="pressed" from="pausa/soundoff" to="." method="_on_soundoff_pressed"]
+[connection signal="pressed" from="pausa/sound" to="." method="_on_sound_pressed"]
+[connection signal="pressed" from="pausa/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="victoria/menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="pause" to="." method="_on_pause_pressed"]
