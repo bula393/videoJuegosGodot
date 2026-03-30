@@ -95,8 +95,10 @@ texture = SubResource("CanvasTexture_mh86s")
 position = Vector2(-3.0002718, 50.001038)
 shape = SubResource("RectangleShape2D_djqux")
 
-[node name="barra" parent="." unique_id=1065273452 instance=ExtResource("1_vaun7")]
+[node name="barra" parent="." unique_id=1065273452 groups=["barra"] instance=ExtResource("1_vaun7")]
 position = Vector2(524, 633)
+motion_mode = 1
+platform_on_leave = 2
 
 [node name="ball" parent="." unique_id=2024361078 instance=ExtResource("2_vaun7")]
 position = Vector2(526, 507)

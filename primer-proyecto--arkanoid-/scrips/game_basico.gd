@@ -10,15 +10,14 @@ extends Node2D
 @onready var musicoff = get_node("pausa/musicoff")
 @onready var sound = get_node("pausa/sound")
 @onready var soundoff = get_node("pausa/soundoff")
-
+@onready var barra = get_node("barra")
 
 var master_bus_index = AudioServer.get_bus_index("Master")
 
 
 
-
-
 func _physics_process(delta: float) -> void:
+	barra.position.y = 633
 	if(ball.global_position.y >= 650):
 		soundGameover.play()
 		get_tree().paused = true
