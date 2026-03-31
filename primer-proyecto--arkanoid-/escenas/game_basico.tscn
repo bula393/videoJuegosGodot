@@ -466,7 +466,15 @@ offset_bottom = 96.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_3dkeb")
 icon = ExtResource("15_oggcq")
 
+[node name="TextEdit" type="TextEdit" parent="." unique_id=658327986]
+offset_left = 946.0
+offset_top = 24.0
+offset_right = 1117.0
+offset_bottom = 68.0
+theme_override_font_sizes/font_size = 25
+
 [connection signal="pressed" from="derrota/play again" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="pausa/menu" to="." method="_on_menu_pressed"]
 [connection signal="pressed" from="pausa/music" to="." method="_on_music_pressed"]
 [connection signal="pressed" from="pausa/musicoff" to="." method="_on_musicoff_pressed"]
 [connection signal="pressed" from="pausa/soundoff" to="." method="_on_soundoff_pressed"]

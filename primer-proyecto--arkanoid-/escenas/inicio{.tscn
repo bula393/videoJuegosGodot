@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cl4wviteyojlc"]
 
 [ext_resource type="Texture2D" uid="uid://csdlmjdtw0kt" path="res://assets/fondo.jpg" id="1_qctbd"]
-[ext_resource type="Script" uid="uid://dnott33h4gbsn" path="res://escenas/inicio{.gd" id="1_v7hxl"]
+[ext_resource type="Script" uid="uid://dnott33h4gbsn" path="res://scrips/inicio{.gd" id="1_v7hxl"]
 [ext_resource type="Texture2D" uid="uid://iqbjgltwjjfe" path="res://assets/Arkanoid-logo.svg.png" id="2_v7hxl"]
 [ext_resource type="AudioStream" uid="uid://umqhscwxg8ma" path="res://assets/musicAndEffects/adrihuwu-adrihuwu-the-game-209106.mp3" id="4_edpds"]
 

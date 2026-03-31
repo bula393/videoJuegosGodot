@@ -14,10 +14,17 @@ extends Node2D
 
 var master_bus_index = AudioServer.get_bus_index("Master")
 
+var bloquesIniciales
 
+var score 	
+
+func _ready() -> void:
+	bloquesIniciales = get_tree().get_nodes_in_group("BLOQUES").size()	
 
 func _physics_process(delta: float) -> void:
 	barra.position.y = 633
+	score = (bloquesIniciales - get_tree().get_nodes_in_group("BLOQUES").size())*5
+	get_node("TextEdit").text = "score:" + str(score)
 	if(ball.global_position.y >= 650):
 		soundGameover.play()
 		get_tree().paused = true
@@ -25,7 +32,7 @@ func _physics_process(delta: float) -> void:
 	elif (get_tree().get_nodes_in_group("BLOQUES").size() == 0):
 		get_tree().paused = true
 		victoria.visible = true
-		
+
 
 
 func _on_play_again_pressed() -> void:
@@ -35,6 +42,7 @@ func _on_play_again_pressed() -> void:
 
 
 func _on_menu_pressed() -> void:
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://escenas/inicio{.tscn")
 
 
